@@ -333,7 +333,7 @@ class Appliance():
             options = []
             if self.selected_program and self.available_programs and not self.startonly_program:
                 for opt in self.selected_program.options.values():
-                    if opt.key in self.available_programs[program_key].options and (not self.startonly_options or opt.key not in self.startonly_options):
+                    if self.available_programs[program_key].options and opt.key in self.available_programs[program_key].options and (not self.startonly_options or opt.key not in self.startonly_options):
                         option = { "key": opt.key, "value": opt.value}
                         options.append(option)
             if self.startonly_options:
